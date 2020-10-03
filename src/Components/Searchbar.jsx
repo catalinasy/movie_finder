@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useCallback, useRef } from "react";
 
-const Searchbar = () => {
+const Searchbar = ({ queryString, setQueryString }) => {
+  const searchInput = useRef("");
+
+
+
+  const handleSearch = useCallback(() => {
+    setQueryString(searchInput.current.value)
+  }, [setQueryString, searchInput])
+
+
+
   return (
     <div className="pt-2 relative mx-auto text-gray-600 flex justify-between items-center">
       <input
@@ -8,8 +18,10 @@ const Searchbar = () => {
         type="search"
         name="search"
         placeholder="Search for your movies"
+        ref={searchInput}
       />
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-4 rounded">
+        
+      <button onClick={handleSearch} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-4 rounded">
         Search!
       </button>
     </div>
