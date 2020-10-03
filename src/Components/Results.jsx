@@ -11,7 +11,7 @@ const handleClick = (id) => {
 
 
   return (
-    <div className="flex full-width w-3/4 m-12">
+    <div className="flex flex-wrap full-width w-3/4 m-12">
       {results.map((r) => (
         <div class="py-4 m-4 cursor-pointer" onClick={() => handleClick(r.id)}>
           <div class="shadow-lg group container  rounded-md bg-white  max-w-sm flex justify-center items-center  mx-auto content-div">
@@ -19,7 +19,7 @@ const handleClick = (id) => {
               <div class="w-full image-cover rounded-t-md flex justify-center">
                 <img src={"https://via.placeholder.com/200x150"}/>
               </div>
-              <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
+              <div class="py-8 px-4 bg-white rounded-b-md fd-cl group-hover:opacity-25">
                 <span class="block text-lg text-gray-800 font-bold tracking-wide">
                   {r.name}
                 </span>
